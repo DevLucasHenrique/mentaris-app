@@ -1,0 +1,9 @@
+section#hero {
+  background-color: white;
+  padding: 16px;
+}
+
+section#hero .hero-image {
+  width: 100%;
+  height: 100%;
+}
