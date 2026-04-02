@@ -32,42 +32,45 @@ section#ecosystem .systems-container {
   gap: 24px;
 }
 
-.info {
+section#ecosystem .system.store-card > .info {
   width: 90%;
   padding: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   gap: 12px;
-  z-index: 2; 
+  z-index: 2;
 }
 
 section#ecosystem .system {
-  position: relative; 
-  display: flex;
-  flex-direction: row;
   background-color: var(--blackGreen);
+  position: relative;
+  display: flex;
   width: 100%;
   height: 320px;
   border-radius: 40px;
-  overflow: hidden; 
+  overflow: hidden;
+}
+
+section#ecosystem .system.store-card {
+  flex-direction: row;
 }
 
 .system .system-title {
   font-size: 2em;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.800);
+  color: rgba(255, 255, 255, 0.8);
   font-family: var(--titleFont);
 }
 
 .system .system-text {
   font-size: 0.9em;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.800);
+  color: rgba(255, 255, 255, 0.8);
   font-family: var(--titleFont);
 }
 
-.system .store-button {
+.system .go-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,7 +94,7 @@ section#ecosystem .system {
 
 .system .images {
   position: absolute;
-  top: -15%;  
+  top: -15%;
   right: -30px;
   width: 40%;
   height: 120%;
@@ -110,10 +113,80 @@ section#ecosystem .system {
   background-color: #eee;
 }
 
-.android-icon {
+.system.app-card {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 24px;
+}
+
+.app-card .android-icon {
   width: 29px;
 }
 
-.apple-icon {
+.app-card .apple-icon {
   width: 26px;
+}
+
+.brands {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 60px;
+  padding: 0px;
+}
+
+.app-card > .info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  height: 100%;
+  gap: 12px;
+}
+
+.mobile-image {
+  position: absolute;
+  top: 0%;
+  right: -150px;
+  width: auto;
+  height: 140%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  rotate: -15deg;
+  z-index: 1;
+}
+
+.app-card > .info > .system-text {
+  width: 70%;
+}
+
+
+.online-call > .info {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 24px;
+  justify-content: flex-end;
+  height: 100%;
+  gap: 12px;
+}
+
+.online-call > .info .system-title {
+  width: 50%;
+}
+
+.online-call > .info .system-text {
+  width: 50%;
+}
+
+.online-call .woman-illustration {
+  position: absolute;
+  top: 15%;
+  right: -90px;
+  width: auto;
+  height: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  rotate: -12deg;
+  z-index: 1;
 }
