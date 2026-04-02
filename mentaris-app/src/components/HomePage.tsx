@@ -64,6 +64,11 @@ export function HomePage() {
           </div>
         </div>
       </section>
+      <section id="history-section">
+        <p className="history-text">
+          Líder em bem-estar e saúde mental no Brasil, a     Mentaris transforma vidas com atendimento personalizado, tecnologia de ponta e profissionais apaixonados pelo que fazem. Você merece o melhor.
+        </p>
+      </section>
     </>
   );
 }
