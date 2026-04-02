@@ -1,0 +1,39 @@
+
+
+section#history-section {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 32px 32px;
+  background-color: #D8E9BA;
+  gap: 24px;
+}
+
+section#history-section .history-text {
+  font-size: 32px;
+  font-family: var(--titleFont);
+  color: var(--blackGreen);
+  line-height: 64px;
+}
+
+section#history-section .history-text .text-logo-image {
+  background-color: var(--blackGreen);
+  padding: 4px;
+  width: 24px;
+  border-radius: 100%;
+}
+
+section#history-section button.talk {
+  padding: 12px 24px;
+  background-color: var(--blackGreen);
+  color: #D8E9BA;
+  font-family: var(--titleFont);
+  border-radius: 48px;
+  border: none;
+}
+
+section#history-section button.talk:hover {
+  transform: scale(1.05);
+}
+

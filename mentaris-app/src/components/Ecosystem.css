@@ -1,0 +1,179 @@
+section#ecosystem {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 32px;
+  gap: 48px;
+}
+
+section#ecosystem h2.ecosystem-title {
+  font-size: 2.2em;
+  font-weight: 500;
+  font-family: var(--titleFont);
+  color: var(--blackGreen);
+  padding: 6px;
+}
+
+section#ecosystem .systems-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
+}
+
+section#ecosystem .system.store-card > .info {
+  width: 90%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 12px;
+  z-index: 2;
+}
+
+section#ecosystem .system {
+  background-color: var(--blackGreen);
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 320px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+section#ecosystem .system.store-card {
+  flex-direction: row;
+}
+
+.system .system-title {
+  font-size: 2em;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--titleFont);
+}
+
+.system .system-text {
+  font-size: 0.9em;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--titleFont);
+}
+
+.system .go-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--titleFont);
+  color: var(--blackGreen);
+  padding: 6px 12px;
+  width: fit-content;
+  border: none;
+  border-radius: 48px;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.system .store-button:hover {
+  transform: scale(1.1);
+}
+
+.system .store-button .arrow-up {
+  width: 16px;
+}
+
+.system .images {
+  position: absolute;
+  top: -15%;
+  right: -30px;
+  width: 40%;
+  height: 120%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  rotate: -15deg;
+  z-index: 1;
+}
+
+.system .images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 24px;
+  background-color: #eee;
+}
+
+.system.app-card {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 24px;
+}
+
+.app-card .android-icon {
+  width: 29px;
+}
+
+.app-card .apple-icon {
+  width: 26px;
+}
+
+.brands {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 60px;
+  padding: 0px;
+}
+
+.app-card > .info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  height: 100%;
+  gap: 12px;
+}
+
+.mobile-image {
+  position: absolute;
+  top: 0%;
+  right: -150px;
+  width: auto;
+  height: 140%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  rotate: -15deg;
+  z-index: 1;
+}
+
+.app-card > .info > .system-text {
+  width: 70%;
+}
+
+
+.online-call > .info {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 24px;
+  justify-content: flex-end;
+  height: 100%;
+  gap: 12px;
+}
+
+.online-call > .info .system-title {
+  width: 50%;
+}
+
+.online-call > .info .system-text {
+  width: 50%;
+}
+
+.online-call .woman-illustration {
+  position: absolute;
+  top: 15%;
+  right: -115px;
+  width: auto;
+  height: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  rotate: -12deg;
+  z-index: 1;
+}
