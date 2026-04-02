@@ -117,6 +117,11 @@ div.mobile-menu .menu-link {
   font-size: 2.4em;
   text-decoration: none;
   color: #747474;
+  transition: 0.3s ease;
+}
+
+div.mobile-menu .menu-link:hover {
+  transform: translateX(6px);
 }
 
 div.mobile-menu .active-link {
