@@ -1,6 +1,7 @@
 import { Header } from "./header/Header";
 import "./HomePage.css";
 import background from "../assets/images/background.png";
+import logoLemon from "../assets/icons/logo-lemon.png"
 import arrow from "../assets/icons/arrow-up.svg";
 import bagsImage from "../assets/images/bags.png";
 import beach from "../assets/images/beach.png";
@@ -66,7 +67,7 @@ export function HomePage() {
       </section>
       <section id="history-section">
         <p className="history-text">
-          Líder em bem-estar e saúde mental no Brasil, a     Mentaris transforma vidas com atendimento personalizado, tecnologia de ponta e profissionais apaixonados pelo que fazem. Você merece o melhor.
+          Líder em bem-estar e saúde mental no Brasil, a <img src={logoLemon} className="text-logo-image" alt="Logo" /> Mentaris transforma vidas com atendimento personalizado, tecnologia de ponta e profissionais apaixonados pelo que fazem. Você merece o melhor.
         </p>
       </section>
     </>

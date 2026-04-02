@@ -190,3 +190,26 @@ section#ecosystem .system.store-card {
   rotate: -12deg;
   z-index: 1;
 }
+
+section#history-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 32px;
+  background-color: #D8E9BA;
+}
+
+section#history-section .history-text {
+  font-size: 32px;
+  font-family: var(--titleFont);
+  color: var(--blackGreen);
+  line-height: 64px;
+}
+
+section#history-section .history-text .text-logo-image {
+  background-color: var(--blackGreen);
+  padding: 4px;
+  width: 24px;
+  border-radius: 100%;
+}
+
