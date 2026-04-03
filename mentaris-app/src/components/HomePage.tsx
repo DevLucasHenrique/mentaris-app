@@ -3,6 +3,7 @@ import "./HomePage.css";
 import background from "../assets/images/background.png";
 import { Ecosystem } from "./Ecosystem";
 import { History } from "./History";
+import { Testimonials } from "./Testimonials";
 
 
 export function HomePage() {
@@ -15,7 +16,7 @@ export function HomePage() {
 
       <Ecosystem />
       <History />
-      
+      <Testimonials />
     </>
   );
 }
