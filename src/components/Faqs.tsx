@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Faqs.css";
 
 interface Faq {
@@ -23,10 +24,6 @@ const FAQs: Faq[] = [
     body: "A Mentaris é indicada para qualquer pessoa que busque melhorar sua saúde emocional, desde aqueles que enfrentam transtornos específicos como depressão e burnout, até quem deseja apenas um espaço de reflexão e crescimento pessoal em um ambiente acolhedor.",
   },
   {
-    title: "Substitui o tratamento médico?",
-    body: "Não. A terapêutica integrativa atua de forma complementar aos tratamentos médicos tradicionais. Trabalhamos em conjunto com diagnósticos clínicos para potencializar os resultados do paciente, focando no bem-estar emocional que sustenta a saúde física.",
-  },
-  {
     title: "As sessões são sigilosas?",
     body: "Sim, o sigilo ético é um dos nossos pilares fundamentais. Todas as informações compartilhadas durante as terapias são protegidas, garantindo um ambiente de total confiança e segurança para que o paciente se sinta à vontade para se expressar.",
   },
@@ -42,21 +39,36 @@ const FAQs: Faq[] = [
     title: "Aceitam convênios médicos?",
     body: "Trabalhamos principalmente com atendimentos particulares e sistema de reembolso. Fornecemos toda a documentação necessária para que você possa solicitar o reembolso junto ao seu plano de saúde de forma simples e rápida.",
   },
-  {
-    title: "Existe suporte entre as sessões?",
-    body: "Sim! Através do nosso aplicativo, os pacientes têm acesso a exercícios de respiração, diário de pensamentos e materiais exclusivos que auxiliam na manutenção do equilíbrio emocional entre uma consulta e outra.",
-  },
 ];
 
 export function Faqs() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <section id="faqs">
-      {FAQs.map((faq) => (
-        <div>
-          <h2 className="faq-title">{faq.title}</h2>
-          <p className="faq-text">{faq.body}</p>
-        </div>
-      ))}
+      <div className="head">
+        <h2 className="faqs-title">Duvidas frequentes</h2>
+        <span className="text-background">FAQ</span>
+      </div>
+      <div className="faqs-container">
+        {FAQs.map((faq, index) => {
+          const isOpen = activeIndex === index;
+
+          return (
+            <div className={`faq ${isOpen ? "open" : ""}`}>
+              <div className="info">
+                <h2 className="faq-title">{faq.title}</h2>
+                <p className="faq-text">{faq.body}</p>
+              </div>
+              <button className="show-hide" onClick={() => {toggleFaq(index)}}>{isOpen? "-": "+"}</button>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }

@@ -1,7 +1,6 @@
 section#ecosystem {
   display: flex;
   flex-flow: column nowrap;
-  padding: 32px;
   gap: 48px;
 }
 

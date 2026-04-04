@@ -1,0 +1,78 @@
+section#faqs {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
+}
+
+section#faqs .head {
+  font-family: var(--titleFont);
+  color: var(--blackGreen);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: fit-content;
+}
+
+section#faqs .head .faqs-title {
+  text-align: center;
+  width: 100%;
+  font-size: 2.55em;
+  font-weight: 300;
+}
+
+section#faqs .head .text-background {
+  font-size: 1em;
+  padding: 6px 12px;
+  border-radius: 24px;
+  background-color: rgba(88, 129, 87, 0.11);
+  align-self: flex-end;
+}
+
+section#faqs .faqs-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
+}
+
+section#faqs .faq {
+  color: var(--blackGreen);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--titleFont);
+  background-color: transparent; 
+}
+
+section#faqs .faq .info > h2.faq-title {
+  width: 70dvw;
+  color: var(--blackGreen);
+  font-weight: 400;
+}
+
+section#faqs .faq p {
+  display: none;
+}
+
+section#faqs .faq.open {
+  background-color: rgba(88, 129, 87, 0.11);
+  padding: 12px;
+  border-radius: 24px;
+}
+
+section#faqs .faq.open p {
+  font-size: 0.8em;
+  display: inline-block;
+  margin-top: 12px;
+}
+
+section#faqs .faq button.show-hide {
+  position: absolute;
+  right: 10%;
+  background-color: #d9d9d9;
+  color: rgba(0, 0, 0, 0.678);
+  border: none;
+  font-size: 1.4em;
+  padding: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

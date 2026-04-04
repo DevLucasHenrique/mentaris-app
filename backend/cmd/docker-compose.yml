@@ -1,0 +1,17 @@
+services:
+  database:
+    container_name: database
+    image: postgres:16
+    environment:
+      - POSTGRES_PASSWORD=bOeiNg-@787#max
+      - POSTGRES_USER=mentaris
+      - POSTGRES_DB=mentaris_db
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
