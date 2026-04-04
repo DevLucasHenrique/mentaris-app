@@ -2,7 +2,11 @@ module github.com/DevLucasHenrique/mentaris-app/backend
 
 go 1.26.1
 
-require github.com/gin-gonic/gin v1.12.0
+require (
+	github.com/gin-gonic/gin v1.12.0
+	github.com/joho/godotenv v1.5.1
+	github.com/lib/pq v1.12.3
+)
 
 require (
 	github.com/bytedance/gopkg v0.1.3 // indirect
