@@ -1,6 +1,7 @@
 package main
 
 import (
+
 	"github.com/DevLucasHenrique/mentaris-app/backend/controllers"
 	"github.com/DevLucasHenrique/mentaris-app/backend/db"
 	"github.com/DevLucasHenrique/mentaris-app/backend/repositorys"
@@ -21,4 +22,6 @@ func main() {
 	Controller := controllers.NewTestimonialController(Usecase)
 
 	server.GET("/api/testimonials", Controller.GetTestimonials)
+
+	server.Run(":8000")
 }

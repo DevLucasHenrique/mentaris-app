@@ -6,6 +6,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"net/url"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -13,10 +14,10 @@ import (
 )
 
 func ConnectDB() (*sql.DB, error) {
-	err := godotenv.Load()
+	err := godotenv.Load("../.env")
 
 	if err != nil {
-		log.Println("Cant found .env file")
+		log.Println("Can't found .env file")
 	}
 
 	host := os.Getenv("DB_HOST")
@@ -25,8 +26,10 @@ func ConnectDB() (*sql.DB, error) {
 	password := os.Getenv("DB_PASSWORD")
 	dbname := os.Getenv("DB_NAME")
 
-	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
-		host, port, user, password, dbname)
+	psqlInfo := fmt.Sprintf(
+		"postgres://%s:%s@%s:%s/%s?sslmode=disable",
+		user, url.QueryEscape(password), host, port, dbname,
+	)
 
 	db, err := sql.Open("postgres", psqlInfo)
 
@@ -39,6 +42,7 @@ func ConnectDB() (*sql.DB, error) {
 		panic(err)
 	}
 
+	fmt.Println("Running at: ", port)
 	fmt.Println("Connected to: ", dbname)
 
 	return db, nil
