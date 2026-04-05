@@ -46,5 +46,9 @@ func (pr *TestimonialRepository) GetTestimonials() ([]models.Testimonial, error)
 		productsList = append(productsList, productObj)
 	}
 
+	if len(productsList) == 0 {
+		return []models.Testimonial{}, nil
+	}
+
 	return productsList, nil
 }
