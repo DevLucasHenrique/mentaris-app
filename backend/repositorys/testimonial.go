@@ -52,3 +52,16 @@ func (pr *TestimonialRepository) GetTestimonials() ([]models.Testimonial, error)
 
 	return productsList, nil
 }
+
+func (pr *TestimonialRepository) AddTestimonial(testimonial models.Testimonial) (int, error) {
+	var id int
+	
+	query := "INSERT INTO testimonials (name, date, body) VALUES ($1, $2, $3) RETURNING id"
+	err := pr.connection.QueryRow(query, testimonial.Username, testimonial.Date, testimonial.Body).Scan(&id)
+	if err!=nil {
+		fmt.Println("ERROR IN REPOSITORY-AddTestimonial: ", err)
+		return 0, err
+	} 
+
+	return id, nil
+}

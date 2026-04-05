@@ -18,3 +18,7 @@ func NewTestimonialUsecase(repo repositorys.TestimonialRepository) TestimonialUs
 func (pu *TestimonialUsecase) GetTestimonials() ([]models.Testimonial, error) {
 	return pu.repository.GetTestimonials()
 }
+
+func (pu *TestimonialUsecase) AddTestimonial(testimonial models.Testimonial) (int, error) {
+	return pu.repository.AddTestimonial(testimonial)
+}
