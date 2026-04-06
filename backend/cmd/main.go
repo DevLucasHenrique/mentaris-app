@@ -12,6 +12,10 @@ import (
 func main() {
 	server := gin.Default()
 	dbConnection, err := db.ConnectDB()
+	
+	if err != nil {
+		panic(err)
+	}
 
 	server.Use(cors.New(cors.Config{
 		AllowOrigins: []string{"http://localhost:5173"},
@@ -19,9 +23,7 @@ func main() {
 		AllowHeaders: []string{"Content-Type", "Authorization"},
 	}))
 
-	if err != nil {
-		panic(err)
-	}
+	
 
 	TestimonialRepository := repositorys.NewTestimonialRepository(dbConnection)
 	TestimonialUsecase := usecases.NewTestimonialUsecase(TestimonialRepository)

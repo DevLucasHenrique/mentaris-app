@@ -48,6 +48,7 @@ export function Faqs() {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+
   return (
     <section id="faqs">
       <div className="head">
@@ -59,12 +60,15 @@ export function Faqs() {
           const isOpen = activeIndex === index;
 
           return (
-            <div className={`faq ${isOpen ? "open" : ""}`}>
+            <div className={`faq ${isOpen ? "open" : ""}`} key={faq.title}>
               <div className="info">
                 <h2 className="faq-title">{faq.title}</h2>
                 <p className="faq-text">{faq.body}</p>
               </div>
-              <button className="show-hide" onClick={() => {toggleFaq(index)}}>{isOpen? "-": "+"}</button>
+              <button className={`show-hide ${isOpen? "shown": ""}`} onClick={() => {toggleFaq(index)}}>
+                <span className="bar1"></span>
+                <span className="bar2"></span>
+              </button>
             </div>
           );
         })}

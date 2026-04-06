@@ -55,13 +55,32 @@ func (pr *TestimonialRepository) GetTestimonials() ([]models.Testimonial, error)
 
 func (pr *TestimonialRepository) AddTestimonial(testimonial models.Testimonial) (int, error) {
 	var id int
-	
+
 	query := "INSERT INTO testimonials (name, date, body) VALUES ($1, $2, $3) RETURNING id"
 	err := pr.connection.QueryRow(query, testimonial.Username, testimonial.Date, testimonial.Body).Scan(&id)
-	if err!=nil {
+	if err != nil {
 		fmt.Println("ERROR IN REPOSITORY-AddTestimonial: ", err)
 		return 0, err
-	} 
+	}
 
 	return id, nil
+}
+
+func (pr *TestimonialRepository) UpdateTestimonial(id int, updatedTestimonial models.Testimonial) (models.Testimonial, error) {
+	var returnedTestimonial models.Testimonial
+
+	query := "UPDATE testimonials SET name = $1, date = $2, body = $3 WHERE id = $4 RETURNING id, name, date, body"
+	err := pr.connection.QueryRow(query, updatedTestimonial.Username, updatedTestimonial.Date, updatedTestimonial.Body, id).Scan(
+		&returnedTestimonial.ID,
+		&returnedTestimonial.Username,
+		&returnedTestimonial.Date,
+		&returnedTestimonial.Body,
+	)
+
+	if err != nil {
+		fmt.Println("REPOSITORY ERROR: ", err)
+		return models.Testimonial{}, err
+	}
+
+	return returnedTestimonial, err
 }

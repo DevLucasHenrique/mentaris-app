@@ -22,3 +22,7 @@ func (pu *TestimonialUsecase) GetTestimonials() ([]models.Testimonial, error) {
 func (pu *TestimonialUsecase) AddTestimonial(testimonial models.Testimonial) (int, error) {
 	return pu.repository.AddTestimonial(testimonial)
 }
+
+func (pu *TestimonialUsecase) UpdateTestimonial(id int, testimonial models.Testimonial) (models.Testimonial, error) {
+	return  pu.repository.UpdateTestimonial(id, testimonial)
+}

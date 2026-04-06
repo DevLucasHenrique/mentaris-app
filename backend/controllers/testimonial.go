@@ -9,17 +9,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type ProductController struct {
+type TestimonialController struct {
 	usecase usecases.TestimonialUsecase
 }
 
-func NewTestimonialController(usecase usecases.TestimonialUsecase) ProductController {
-	return ProductController{
+func NewTestimonialController(usecase usecases.TestimonialUsecase) TestimonialController {
+	return TestimonialController{
 		usecase: usecase,
 	}
 }
 
-func (pc *ProductController) GetTestimonials(ctx *gin.Context) {
+func (pc *TestimonialController) GetTestimonials(ctx *gin.Context) {
 	testimonials, err := pc.usecase.GetTestimonials()
 	if err != nil {
 		response := models.Response{
@@ -32,7 +32,7 @@ func (pc *ProductController) GetTestimonials(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, testimonials)
 }
 
-func (pc *ProductController) AddTestimonial(ctx *gin.Context) {
+func (pc *TestimonialController) AddTestimonial(ctx *gin.Context) {
 	var testimonial models.Testimonial
 
 	err := ctx.BindJSON(&testimonial)
@@ -60,4 +60,15 @@ func (pc *ProductController) AddTestimonial(ctx *gin.Context) {
 		Message: fmt.Sprintf("Created with Id %v", id),
 	}
 	ctx.JSON(http.StatusCreated, response)
+}
+
+func (pc *TestimonialController) UpdateTestimonial(ctx *gin.Context) {
+	var updatedTestimonial models.Testimonial
+	err := ctx.BindJSON(&updatedTestimonial) 
+	if err!=nil {
+		response := models.Response{
+			Message: "Invalid Input",
+		}
+		ctx.JSON(http.StatusBadRequest, response)
+	}
 }
