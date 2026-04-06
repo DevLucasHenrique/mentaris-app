@@ -5,6 +5,7 @@ import { Ecosystem } from "./Ecosystem";
 import { History } from "./History";
 import { Testimonials } from "./Testimonials";
 import { Faqs } from "./Faqs";
+import { Footer } from "./footer/Footer";
 
 
 export function HomePage() {
@@ -19,6 +20,7 @@ export function HomePage() {
       <History />
       <Testimonials />
       <Faqs />
+      <Footer />
     </>
   );
 }
