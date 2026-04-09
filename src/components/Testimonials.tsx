@@ -23,7 +23,7 @@ export function Testimonials() {
         return;
       }
 
-      const TESTIMONIALS: Testimonial[] = await resp.json();
+      const TESTIMONIALS: Testimonial[] = await resp.json();  
 
       if (!TESTIMONIALS || TESTIMONIALS.length <= 0) {
         console.log("Can't find any testimonial");

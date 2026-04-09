@@ -1,5 +1,3 @@
-// ? ERROR HERE: panic: dial tcp: lookup port=: no such host
-
 package db
 
 import (
